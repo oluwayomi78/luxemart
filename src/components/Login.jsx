@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import GoogleIcon from '../components/icons/GoogleIcon';
-import GitHubIcon from '../components/icons/GitHubIcon';
+import GoogleIcon from './icons/GoogleIcon';
+import GitHubIcon from './icons/GitHubIcon';
 import { signInWithGoogle } from '../firebase';
 
 const Login = ({
