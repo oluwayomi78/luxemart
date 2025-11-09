@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import GoogleIcon from './icons/GoogleIcon';
-import GitHubIcon from './icons/GitHubIcon';
+import GitHubIcon from './icons/GitHubIcon.jsx';
 import { signInWithGoogle } from '../firebase';
 
 const Login = ({
