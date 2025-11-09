@@ -1,0 +1,59 @@
+$primary-color: #3b82f6;
+$font-family: 'Arial', sans-serif;
+$font-size: 16px;
+$padding: 10px;
+$background-color: #192fc0;
+
+body {
+    font-family: $font-family;
+}
+
+@mixin button-style($color) {
+    background-color: $color;
+    color: white;
+    padding: $padding;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: $font-size;
+}
+
+
+.button-primary {
+    @include button-style($primary-color);
+
+    &:hover {
+        background-color: $background-color;
+    }
+}
+
+
+// Define a mixin (like a function)
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    color: #192fc0;
+    align-items: center;
+    background-color: cadetblue;
+}
+
+.hero-section {
+    @include flex-center; // Use the mixin
+    height: 100vh;
+}
+
+.loading-spinner {
+    @include flex-center; // Use it again!
+    height: 50px;
+}
+
+
+.container {
+    height: 100vh;
+    @include flex-center;
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
