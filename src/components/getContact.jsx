@@ -14,7 +14,7 @@ const GetMessage = () => {
                 const userInfo = JSON.parse(localStorage.getItem("userInfo"));
                 const token = userInfo?.token;
 
-                const res = await fetch("http://localhost:4300/api/contact/", {
+                const res = await fetch("https://e-commerce-backend-vert-six.vercel.app/api/contact/", {
                     headers: {
                         "Content-Type": "application/json",
                         ...(token && { Authorization: `Bearer ${token}` }),

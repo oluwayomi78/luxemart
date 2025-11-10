@@ -29,7 +29,7 @@ const ContactUs = () => {
         setSuccess(false);
 
         try {
-            const res = await fetch('http://localhost:4300/api/contact/', {
+            const res = await fetch('https://e-commerce-backend-vert-six.vercel.app/api/contact/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

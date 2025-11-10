@@ -11,7 +11,7 @@ const App = () => {
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
-    const API_URL = "http://localhost:4300/api/users/";
+    const API_URL = `https://e-commerce-backend-vert-six.vercel.app/api/users/`;
 
     const handleSignUp = async () => {
         setError(null);
@@ -22,7 +22,6 @@ const App = () => {
             setLoading(true);
             const response = await axios.post(API_URL, userData)
             localStorage.setItem("token", response.data.token);
-            console.log("User Info:", response.data)
             setMessage(response?.data?.message || "Signup successful!")
             navigate('/login')
         } catch (error) {

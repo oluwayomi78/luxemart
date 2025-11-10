@@ -20,8 +20,8 @@ const Login = ({
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
-    const loginUrl = "http://localhost:4300/api/users/login";
-    const googleLoginUrl = "http://localhost:4300/api/users/google";
+    const loginUrl = "https://e-commerce-backend-vert-six.vercel.app/api/users/login";
+    const googleLoginUrl = "https://e-commerce-backend-vert-six.vercel.app/api/users/google";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +33,6 @@ const Login = ({
             const response = await axios.post(loginUrl, userData);
             const data = response.data;
 
-            console.log("Login successful:", data);
             localStorage.setItem("userInfo", JSON.stringify(data));
 
             window.dispatchEvent(new CustomEvent("authChange", { detail: data }));

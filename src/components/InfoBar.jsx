@@ -1,10 +1,9 @@
 import React from 'react';
 
 const InfoBar = () => {
-    // You would replace these with icons from a library like react-icons
     const InfoItem = ({ title, text }) => (
         <div className="flex items-center gap-4 rounded-lg border bg-white p-4 shadow-sm">
-            <span className="text-3xl">🚚</span> {/* Placeholder icon */}
+            <span className="text-3xl">🚚</span>
             <div>
                 <h4 className="font-bold text-gray-800">{title}</h4>
                 <p className="text-sm text-gray-600">{text}</p>

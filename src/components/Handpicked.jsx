@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Updated data to match the provided image
 const handpickedItems = [
     {
         title: "Designer Leather Jacket",

@@ -70,7 +70,7 @@ const Products = () => {
                 if (filterBrands.length > 0) params.append('brands', filterBrands.join(','));
                 if (filterSizes.length > 0) params.append('sizes', filterSizes.join(','));
 
-                const apiUrl = `http://localhost:4300/api/products?${params.toString()}`;
+                const apiUrl = `https://e-commerce-backend-vert-six.vercel.app/api/products?${params.toString()}`;
                 const res = await fetch(apiUrl, { headers });
 
                 if (!res.ok) throw new Error('Failed to fetch products');

@@ -93,7 +93,7 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         }
 
         try {
-            const res = await fetch(`http://localhost:4300/api/products/${productId}/reviews`, {
+            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -197,7 +197,7 @@ const ProductDetailPage = () => {
         setError(null);
         setRelatedProducts([]);
         try {
-            const res = await fetch(`http://localhost:4300/api/products/${productId}`);
+            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}`);
             if (!res.ok) {
                 throw new Error(`Failed to fetch product: ${res.statusText}`);
             }
@@ -230,7 +230,7 @@ const ProductDetailPage = () => {
             const fetchRelatedProducts = async () => {
                 setRelatedLoading(true);
                 try {
-                    const res = await fetch(`http://localhost:4300/api/products?category=${product.category}&limit=5`);
+                    const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products?category=${product.category}&limit=5`);
                     if (!res.ok) {
                         throw new Error('Failed to fetch related products');
                     }

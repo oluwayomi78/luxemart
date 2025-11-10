@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
             if (userInfo && userInfo.token) {
                 setLoading(true);
                 try {
-                    const res = await fetch('http://localhost:4300/api/users/cart', {
+                    const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/users/cart`, {
                         headers: {
                             'Authorization': `Bearer ${userInfo.token}`,
                         },
@@ -67,8 +67,7 @@ export const CartProvider = ({ children }) => {
         }
 
         try {
-            // FIXED: Added full URL
-            const res = await fetch('http://localhost:4300/api/users/cart', {
+            const res = await fetch('https://e-commerce-backend-vert-six.vercel.app/api/users/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +94,7 @@ export const CartProvider = ({ children }) => {
         if (!userInfo) return;
 
         try {
-            const res = await fetch(`http://localhost:4300/api/users/cart/${productId}`, {
+            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/users/cart/${productId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`,

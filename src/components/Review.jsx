@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Star } from 'lucide-react';
 
-// A simple star rating input component
 const StarRatingInput = ({ rating, setRating }) => {
     return (
         <div className="flex items-center gap-1">
             {[1, 2, 3, 4, 5].map((star) => (
                 <button
-                    type="button" // Important: prevents form submission on click
+                    type="button" 
                     key={star}
                     onClick={() => setRating(star)}
                     className="cursor-pointer"
@@ -23,7 +22,6 @@ const StarRatingInput = ({ rating, setRating }) => {
     );
 };
 
-// The main review form
 const ReviewForm = ({ productId, onReviewSubmitted }) => {
     const [rating, setRating] = useState(0);
     const [title, setTitle] = useState('');
@@ -41,7 +39,6 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         setLoading(true);
         setError(null);
 
-        // Get token from localStorage (same logic as your other components)
         let token = null;
         const userInfoString = localStorage.getItem('userInfo');
         if (userInfoString) {
@@ -55,7 +52,7 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         }
 
         try {
-            const res = await fetch(`http://localhost:4300/api/products/${productId}/reviews`, {
+            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

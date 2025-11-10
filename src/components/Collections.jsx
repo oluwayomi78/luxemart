@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Updated data to match the provided image
+
 const collections = [
     {
         title: "Women's Fashion",
