@@ -93,7 +93,7 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         }
 
         try {
-            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}/reviews`, {
+            const res = await fetch(`https://e-commerce-backend-7gua.onrender.com/api/products/${productId}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -197,7 +197,7 @@ const ProductDetailPage = () => {
         setError(null);
         setRelatedProducts([]);
         try {
-            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}`);
+            const res = await fetch(`https://e-commerce-backend-7gua.onrender.com/api/products/${productId}`);
             if (!res.ok) {
                 throw new Error(`Failed to fetch product: ${res.statusText}`);
             }
@@ -230,7 +230,7 @@ const ProductDetailPage = () => {
             const fetchRelatedProducts = async () => {
                 setRelatedLoading(true);
                 try {
-                    const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products?category=${product.category}&limit=5`);
+                    const res = await fetch(`https://e-commerce-backend-7gua.onrender.com/api/products?category=${product.category}&limit=5`);
                     if (!res.ok) {
                         throw new Error('Failed to fetch related products');
                     }
@@ -357,7 +357,7 @@ const ProductDetailPage = () => {
                             <span className="px-4 py-2 text-lg font-medium">{quantity}</span>
                             <button onClick={() => handleQuantityChange(1)} className="px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-r-md"><Plus size={16} /></button>
                         </div>
-                        {/* 3. Use the new wrapper function in onClick */}
+                        
                         <button
                             onClick={handleAddToCartClick}
                             className="flex-1 bg-indigo-600 text-white py-3 px-6 rounded-md font-medium hover:bg-indigo-700"

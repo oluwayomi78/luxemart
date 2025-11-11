@@ -15,7 +15,7 @@ const AdminLogin = ({
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)
 
-    const loginUrl = "https://e-commerce-backend-vert-six.vercel.app/admin/login" 
+    const loginUrl = "https://e-commerce-backend-7gua.onrender.com/admin/login" 
 
     const handleSumbit = async () => {
         setError(null);

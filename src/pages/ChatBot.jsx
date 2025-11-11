@@ -32,7 +32,7 @@ const ChatBot = () => {
         setChatHistory(updatedChatHistory);
 
         try {
-            const response = await fetch("https://e-commerce-backend-vert-six.vercel.app/api/chat", {
+            const response = await fetch("https://e-commerce-backend-7gua.onrender.com/api/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message }),

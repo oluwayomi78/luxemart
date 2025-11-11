@@ -21,7 +21,6 @@ const Products = () => {
     const [page, setPage] = useState(1);
 
     const [loading, setLoading] = useState(true);
-    // 2. Removed 'loadingCart' state, as the context will handle alerts
     const [error, setError] = useState(null);
 
 
@@ -70,7 +69,7 @@ const Products = () => {
                 if (filterBrands.length > 0) params.append('brands', filterBrands.join(','));
                 if (filterSizes.length > 0) params.append('sizes', filterSizes.join(','));
 
-                const apiUrl = `https://e-commerce-backend-vert-six.vercel.app/api/products?${params.toString()}`;
+                const apiUrl = `https://e-commerce-backend-7gua.onrender.com/api/products?${params.toString()}`;
                 const res = await fetch(apiUrl, { headers });
 
                 if (!res.ok) throw new Error('Failed to fetch products');
@@ -125,8 +124,6 @@ const Products = () => {
         setIsSidebarOpen(false);
     };
 
-    // 4. Removed the old handleAddToCart function
-    // The 'addToCart' function from useCart() will be used directly
 
     const handleNextPage = () => page < totalPages && setPage(p => p + 1);
     const handlePrevPage = () => page > 1 && setPage(p => p - 1);
@@ -296,7 +293,6 @@ const Products = () => {
                                             
                                             <div className="flex-grow" /> 
 
-                                            {/* 5. Changed onClick to use context function and removed loading state */}
                                             <button 
                                                 onClick={() => addToCart(product, 1)}
                                                 className="mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-md font-medium hover:bg-indigo-700"

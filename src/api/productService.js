@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://e-commerce-backend-vert-six.vercel.app/api/products";
+const API_URL = "https://e-commerce-backend-7gua.onrender.com/api/products";
 
 
 const getAuthConfig = (isFormData = false) => {

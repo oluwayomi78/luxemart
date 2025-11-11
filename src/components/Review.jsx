@@ -52,7 +52,7 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         }
 
         try {
-            const res = await fetch(`https://e-commerce-backend-vert-six.vercel.app/api/products/${productId}/reviews`, {
+            const res = await fetch(`https://e-commerce-backend-7gua.onrender.com/api/products/${productId}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

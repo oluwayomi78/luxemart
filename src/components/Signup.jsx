@@ -11,7 +11,7 @@ const App = () => {
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
-    const API_URL = `https://e-commerce-backend-vert-six.vercel.app/api/users/`;
+    const API_URL = `https://e-commerce-backend-7gua.onrender.com/api/users/`;
 
     const handleSignUp = async () => {
         setError(null);

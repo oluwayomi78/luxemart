@@ -47,7 +47,7 @@ const Product = () => {
                 if (categoryParam !== 'All Categories') params.append('category', categoryParam);
 
 
-                const apiUrl = `https://e-commerce-backend-vert-six.vercel.app/api/products?${params.toString()}`;
+                const apiUrl = `https://e-commerce-backend-7gua.onrender.com/api/products?${params.toString()}`;
                 const res = await fetch(apiUrl, { headers });
 
                 if (!res.ok) throw new Error('Failed to fetch products');

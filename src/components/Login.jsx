@@ -20,8 +20,8 @@ const Login = ({
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
-    const loginUrl = "https://e-commerce-backend-vert-six.vercel.app/api/users/login";
-    const googleLoginUrl = "https://e-commerce-backend-vert-six.vercel.app/api/users/google";
+    const loginUrl = "https://e-commerce-backend-7gua.onrender.com/api/users/login";
+    const googleLoginUrl = "https://e-commerce-backend-7gua.onrender.com/api/users/google";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -81,7 +81,6 @@ const Login = ({
 
             const data = response.data;
 
-            console.log("Google Sign-In Success:", data);
             localStorage.setItem("userInfo", JSON.stringify(data));
 
             window.dispatchEvent(new CustomEvent("authChange", { detail: data }));

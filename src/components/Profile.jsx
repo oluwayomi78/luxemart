@@ -13,7 +13,6 @@ const Profile = () => {
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
             setUser(parsedUser);
-            // console.log("✅ User loaded from localStorage:", parsedUser);
         }
     }, []);
 
@@ -68,18 +67,6 @@ const Profile = () => {
         user?.user?.photoURL ||
         `https://ui-avatars.com/api/?name=${displayName[0].toUpperCase()}&background=4f46e5&color=fff&size=128&rounded=true`;
 
-    // const displayUID = user?.uid || user?.user?.uid || "N/A";
-    // // i wanna create an id
-
-    // const creationTime =
-    //     user?.metadata?.creationTime ||
-    //     user?.user?.metadata?.creationTime ||
-    //     null;
-
-    // const lastSignInTime =
-    //     user?.metadata?.lastSignInTime ||
-    //     user?.user?.metadata?.lastSignInTime ||
-    //     null;
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 py-12">
@@ -98,25 +85,6 @@ const Profile = () => {
                 <p className="text-gray-500 mb-4">{displayEmail}</p>
 
                 <div className="border-t border-gray-200 my-4"></div>
-
-                {/* Account Info */}
-                {/* <div className="text-left space-y-3 text-sm text-gray-600">
-                    <p>
-                        <span className="font-medium">User ID:</span> {displayUID}
-                    </p>
-                    <p>
-                        <span className="font-medium">Account Created:</span>{" "}
-                        {creationTime
-                            ? new Date(creationTime).toLocaleDateString()
-                            : "N/A"}
-                    </p>
-                    <p>
-                        <span className="font-medium">Last Login:</span>{" "}
-                        {lastSignInTime
-                            ? new Date(lastSignInTime).toLocaleDateString()
-                            : "N/A"}
-                    </p>
-                </div> */}
 
                 <button
                     onClick={handleLogout}
