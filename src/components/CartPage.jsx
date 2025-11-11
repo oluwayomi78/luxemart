@@ -1,10 +1,13 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
     const { cartItems, removeFromCart, cartLoading } = useCart();
-
+        const navigate = useNavigate()
+    const cheeckOut = () => {
+        navigate('/checkout')
+    }
     if (cartLoading) {
         return <div>Loading your cart...</div>;
     }
@@ -49,7 +52,7 @@ const CartPage = () => {
             </div>
             <div className="mt-8 text-right">
                 <h2 className="text-2xl font-bold">Total: ${total.toFixed(2)}</h2>
-                <button className="mt-4 bg-indigo-600 text-white py-2 px-6 rounded-md font-medium hover:bg-indigo-700" onClick={() => window.location.href = '/checkout'}>
+                <button className="mt-4 bg-indigo-600 text-white py-2 px-6 rounded-md font-medium hover:bg-indigo-700" onClick={() => cheeckOut()}>
                     Proceed to Checkout
                 </button>
             </div>
