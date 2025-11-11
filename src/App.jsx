@@ -21,8 +21,8 @@ import TermsOfService from "./components/TermsOfService.jsx";
 import Careers from "./components/Careers.jsx";
 import GetContact from "./components/getContact.jsx";
 import ChatBot from "./pages/ChatBot.jsx";
-import CheckoutPage from "./context/Checkout.jsx";
-import PaymentPage from "./context/Payment.jsx";
+import CheckoutPage from "./pages/Checkout.jsx";
+import PaymentPage from "./pages/Payment.jsx";
 
 const App = () => {
   
@@ -39,7 +39,6 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           
           <Route path="/profile" element={<Profile />} />
-          
           <Route path="/admin/products" element={<ProductAdmin />} />
           <Route path="/user/products" element={<Products />} />
           <Route path="/product" element={<Product />} />

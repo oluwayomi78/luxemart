@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
-
 export const useCart = () => {
     return useContext(CartContext);
 };
@@ -11,6 +10,16 @@ export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(false);
     
+    const [shippingAddress, setShippingAddress] = useState(() => {
+        try {
+            const storedAddress = localStorage.getItem("shippingAddress");
+            return storedAddress ? JSON.parse(storedAddress) : {};
+        } catch (error) {
+            console.error("Error loading shippingAddress:", error);
+            return {};
+        }
+    });
+
     const [userInfo, setUserInfo] = useState(() => {
         try {
             const storedUser = localStorage.getItem("userInfo");
@@ -114,11 +123,26 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    const saveShippingAddress = (data) => {
+        setShippingAddress(data);
+        localStorage.setItem('shippingAddress', JSON.stringify(data));
+    };
+
+    const clearCart = () => {
+        setCartItems([]);
+        setShippingAddress({});
+        localStorage.removeItem('shippingAddress');
+    };
+
     const value = {
         cartItems,
         addToCart,
         removeFromCart,
         cartLoading: loading,
+        shippingAddress,
+        saveShippingAddress,
+        clearCart,
+        userInfo,
     };
 
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
