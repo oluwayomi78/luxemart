@@ -17,7 +17,7 @@ const UserList = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!userInfo || !userInfo.isAdmin) {
+        if (!userInfo || !userInfo.user.isAdmin) {
             toast.error('Not authorized. Admin only.');
             navigate('/');
             return;
