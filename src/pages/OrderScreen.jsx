@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { usePaystackPayment } from '@paystack/inline-js';
+import { usePaystackPayment } from 'react-paystack';
 
 const Loader = () => <div>Loading...</div>;
 
