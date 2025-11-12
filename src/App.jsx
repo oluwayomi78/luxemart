@@ -24,8 +24,8 @@ import ChatBot from "./pages/ChatBot.jsx";
 import CheckoutPage from "./pages/Checkout.jsx";
 import PaymentPage from "./pages/Payment.jsx";
 import OrderScreen from "./pages/OrderScreen.jsx";
-import UserListPage from "./components/UserList.jsx";
-import UserEditPage from "./components/EditUser.jsx";
+import UserList from "./components/UserList.jsx";
+import UserEdit from "./components/EditUser.jsx";
 
 const App = () => {
   
@@ -58,8 +58,8 @@ const App = () => {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/order/:id" element={<OrderScreen />} />
-          <Route path="/admin/userlist" element={<UserListPage />} />
-          <Route path="/admin/user/:id/edit" element={<UserEditPage />} />
+          <Route path="/admin/user" element={<UserList />} />
+          <Route path="/admin/user/:id/edit" element={<UserEdit />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatBot />
