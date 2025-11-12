@@ -7,25 +7,25 @@ const Loader = () => <div>Loading...</div>;
 
 const USERS_URL = 'https://e-commerce-backend-7gua.onrender.com/api/users';
 
-const UserList = () => {
+const UserListPage = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-
     const navigate = useNavigate();
 
     useEffect(() => {
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
         if (!userInfo || !userInfo.user.isAdmin) {
             toast.error('Not authorized. Admin only.');
             navigate('/');
-            return;
+            return; 
         }
 
         const fetchUsers = async () => {
             try {
-                setLoading(true);
+                setLoading(true); 
                 const config = {
                     headers: {
                         Authorization: `Bearer ${userInfo.token}`,
@@ -33,7 +33,6 @@ const UserList = () => {
                 };
 
                 const { data } = await axios.get(USERS_URL, config);
-
                 setUsers(data);
                 setLoading(false);
             } catch (err) {
@@ -45,7 +44,8 @@ const UserList = () => {
         };
 
         fetchUsers();
-    }, [userInfo, navigate]);
+
+    }, [navigate]); 
 
     if (loading) return <Loader />;
     if (error) return <div style={{ color: 'red' }}>Error: {error}</div>;
@@ -57,7 +57,7 @@ const UserList = () => {
                 <thead>
                     <tr style={{ background: '#f4f4f4' }}>
                         <th style={{ padding: '8px', border: '1p solid #ddd' }}>ID</th>
-                        <th style={{ padding: '8px', border: '1p solid #ddd' }}>NAME</th>
+                        <th style={{ padding: '8px', border: '1G' }}>NAME</th>
                         <th style={{ padding: '8px', border: '1p solid #ddd' }}>EMAIL</th>
                         <th style={{ padding: '8px', border: '1p solid #ddd' }}>ADMIN</th>
                         <th style={{ padding: '8px', border: '1p solid #ddd' }}>EDIT</th>
@@ -89,4 +89,4 @@ const UserList = () => {
     );
 };
 
-export default UserList;
+export default UserListPage;

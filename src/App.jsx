@@ -26,6 +26,7 @@ import PaymentPage from "./pages/Payment.jsx";
 import OrderScreen from "./pages/OrderScreen.jsx";
 import UserList from "./components/UserList.jsx";
 import UserEdit from "./components/EditUser.jsx";
+import Admin from "./components/AdminLogin.jsx";
 
 const App = () => {
   
@@ -60,6 +61,7 @@ const App = () => {
           <Route path="/order/:id" element={<OrderScreen />} />
           <Route path="/admin/user" element={<UserList />} />
           <Route path="/admin/user/:id/edit" element={<UserEdit />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatBot />
