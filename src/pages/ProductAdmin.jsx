@@ -124,6 +124,7 @@ const ProductAdmin = () => {
                         {isCreating ? "Cancel" : "Add New Product"}
                     </button>
                     <button onClick={() => navigate('/GetMessage')} className="bg-blue-500 hover:bg-blue-600 ml-4 px-4 py-2 rounded-lg text-white">Get messages</button>
+                    <button onClick={() => navigate('/admin/userlist')} className="bg-green-500 hover:bg-green-600 ml-4 px-4 py-2 rounded-lg text-white">Get Users</button> 
                 </div>
 
                 {isCreating && (
