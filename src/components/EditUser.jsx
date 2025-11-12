@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const Loader = () => <div>Loading...</div>;
 const USERS_URL = 'https://e-commerce-backend-7gua.onrender.com/api/users';
 
-const UserEditPage = () => {
+const UserEdit = () => {
     const { id: userId } = useParams(); 
     const navigate = useNavigate();
 
@@ -59,39 +59,61 @@ const UserEditPage = () => {
     if (loading) return <Loader />;
 
     return (
-        <div style={{ padding: '20px', maxWidth: '500px', margin: 'auto' }}>
-            <h1>Edit User</h1>
+        <div className="max-w-lg mx-auto p-5 bg-white shadow-md rounded-lg mt-10">
+            <h1 className="text-2xl font-bold text-gray-900 mb-6">Edit User</h1>
             <form onSubmit={submitHandler}>
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Name</label>
+                <div className="mb-4">
+                    <label 
+                        htmlFor="name" 
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                        Name
+                    </label>
                     <input
+                        id="name"
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        style={{ width: '100%', padding: '8px' }}
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                     />
                 </div>
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Email</label>
+                
+                <div className="mb-4">
+                    <label 
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                        Email
+                    </label>
                     <input
+                        id="email"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        style={{ width: '100%', padding: '8px' }}
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
                     />
                 </div>
-                <div style={{ marginBottom: '15px' }}>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={isAdmin}
-                            onChange={(e) => setIsAdmin(e.target.checked)}
-                            style={{ marginRight: '10px' }}
-                        />
+                
+                <div className="mb-6 flex items-center">
+                    <input
+                        id="isAdmin"
+                        type="checkbox"
+                        checked={isAdmin}
+                        onChange={(e) => setIsAdmin(e.target.checked)}
+                        className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                    />
+                    <label 
+                        htmlFor="isAdmin"
+                        className="ml-2 block text-sm font-medium text-gray-700"
+                    >
                         Is Admin
                     </label>
                 </div>
-                <button type="submit" style={{ padding: '10px 15px' }}>
+                
+                <button 
+                    type="submit" 
+                    className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
                     Update
                 </button>
             </form>
@@ -99,4 +121,4 @@ const UserEditPage = () => {
     );
 };
 
-export default UserEditPage;
+export default UserEdit;
