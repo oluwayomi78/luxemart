@@ -21,6 +21,7 @@
     "react-paystack": "^6.0.0",
     "react-router-dom": "^7.9.5",
     "react-slick": "^0.31.0",
+    "react-toastify": "^11.0.5",
     "remark-gfm": "^4.0.1",
     "sass": "^1.93.2",
     "slick-carousel": "^1.8.1"
