@@ -23,6 +23,7 @@ import GetContact from "./components/getContact.jsx";
 import ChatBot from "./pages/ChatBot.jsx";
 import CheckoutPage from "./pages/Checkout.jsx";
 import PaymentPage from "./pages/Payment.jsx";
+import OrderScreen from "./pages/OrderScreen.jsx";
 
 const App = () => {
   
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/GetMessage" element={<GetContact />}/>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/order/:id" element={<OrderScreen />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatBot />

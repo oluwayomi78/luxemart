@@ -119,12 +119,12 @@ export default function PaymentPage() {
                                     <input 
                                         type="radio" 
                                         name="paymentMethod" 
-                                        value="Stripe"
-                                        checked={paymentMethod === 'Stripe'}
+                                        value="Paystack"
+                                        checked={paymentMethod === 'Paystack'}
                                         onChange={(e) => setPaymentMethod(e.target.value)}
                                         className="h-5 w-5 text-indigo-600"
                                     />
-                                    <span className="ml-3 text-lg font-medium text-gray-800">Stripe</span>
+                                    <span className="ml-3 text-lg font-medium text-gray-800">Paystack</span>
                                 </label>
                             </div>
 
