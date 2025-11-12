@@ -42,18 +42,10 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        saveShippingAddress(formData);
 
-        const shippingData = {
-            address: formData.address,
-            city: `${formData.city}, ${formData.state}`,
-            postalCode: formData.postalCode,
-            country: formData.country,
-        };
-
-        saveShippingAddress(shippingData);
         navigate('/payment');
     };
-
     useEffect(() => {
         if (!cartLoading && cartItems.length === 0) {
             navigate('/user/products');
@@ -163,7 +155,5 @@ const Checkout = () => {
         </div>
     );
 }
-
-
 
 export default Checkout;
