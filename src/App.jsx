@@ -55,7 +55,7 @@ const App = () => {
           <Route path="/GetMessage" element={<GetContact />}/>
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/order" element={<OrderScreen />} />
+          <Route path="/order/:id" element={<OrderScreen />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatBot />
