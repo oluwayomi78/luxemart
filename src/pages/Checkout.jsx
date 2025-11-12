@@ -43,7 +43,6 @@ const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         saveShippingAddress(formData);
-
         navigate('/payment');
     };
     useEffect(() => {
