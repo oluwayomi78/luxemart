@@ -30,7 +30,7 @@ const AdminLogin = ({
     const [error, setError] = useState(null)
 
 
-    const loginUrl = "https://e-commerce-backend-7gua.onrender.com/admin/login"
+    const loginUrl = "https://e-commerce-backend-7gua.onrender.com/api/users/login"
 
     const handleSumbit = async () => {
         setError(null);
